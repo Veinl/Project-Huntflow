@@ -1,6 +1,6 @@
 const React = require('react');
 
-function CandidateCard({ title }) {
+function CandidateCard({ candidate }) {
   return (
     <div className="card">
       <img src={candidate.img} className="card-img-bottom" alt="..." />
