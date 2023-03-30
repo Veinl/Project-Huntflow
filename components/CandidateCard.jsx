@@ -13,6 +13,13 @@ function CandidateCard({ candidate, history }) {
           <p className="card-text">Email: {candidate.email}</p>
           <p className="card-text">Number: {candidate.number}</p>
           <History candidate={candidate} history={history} />
+          <button
+            formAction={`/candidate/modal-form/${candidate.id}`}
+            id="comment"
+            type="submit"
+          >
+            Оставить комментарий
+          </button>
         </div>
       </div>
     </Layout>
