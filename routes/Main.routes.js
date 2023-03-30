@@ -20,9 +20,18 @@ router
     const html = RDM.renderToStaticMarkup(view);
     res.json({ html });
   })
-  .post(async ({ body }, res) => {
+  .post(async ({ body: { image, name, experience, number, email } }, res) => {
     try {
-      await Candidate.create({ body });
+      console.log(image, name, experience, number, email);
+      await Candidate.create({
+        image,
+        name,
+        experience,
+        number,
+        email,
+        reject_status: false,
+        handed: false,
+      });
       res.json({ message: 'OK' });
     } catch ({ message }) {
       console.log(message);

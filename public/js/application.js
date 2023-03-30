@@ -12,10 +12,10 @@ if (addBtn) {
           const {
             action,
             method,
-            img: { value: img },
+            img: { value: image },
             name: { value: name },
-            exp: { value: exp },
-            num: { value: num },
+            exp: { value: experience },
+            num: { value: number },
             email: { value: email },
           } = ev.target;
           fetch(action, {
@@ -24,15 +24,15 @@ if (addBtn) {
               'Content-type': 'application/json',
             },
             body: JSON.stringify({
-              img,
+              image,
               name,
-              exp,
-              num,
+              experience,
+              number,
               email,
-            })
-              .then((res) => res.json())
-              .then(({ message }) => console.log(message)),
-          });
+            }),
+          })
+            .then((res) => res.json())
+            .then(({ message }) => console.log(message));
           document.getElementById('can-dialog').remove();
         });
         document.getElementById('closeBtn').addEventListener('click', () => {
