@@ -1,11 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-const Loga = ({ title }) => {
+function Loga({ title, user }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} user={user}>
       <div className="divForm">
-        <h1>ВОЙТИ</h1>
+        <h2>Войти</h2>
         <form action="/auth/loga" method="POST" id="formLogin" className="form">
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
@@ -33,9 +33,9 @@ const Loga = ({ title }) => {
             ВОЙТИ
           </button>
         </form>
-        <h2 className="errorLogin"></h2>
+        <h2 className="errorLogin" />
       </div>
     </Layout>
   );
-};
+}
 module.exports = Loga;

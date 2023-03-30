@@ -3,9 +3,9 @@ const Layout = require('./Layout');
 const Categories = require('./Categories');
 const CandidateItem = require('./CandidatesItem');
 
-function Candidates({ title, candidates = [] }) {
+function Candidates({ title, candidates = [], user }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} user={user}>
       <Categories className="Categories" />
       <h1>Candidates</h1>
       <ul className="candidates">
@@ -17,7 +17,7 @@ function Candidates({ title, candidates = [] }) {
       <button id="addCan" type="submit">
         Добавить нового кандидата
       </button>
-    </Layout>
+      </Layout>
   );
 }
 
