@@ -13,6 +13,7 @@ function CandidateCard({ candidate }) {
           <p className="card-text">{candidate.number}</p>
           <button type="submit">Оставить комментарий</button>
         </div>
+      </div>
     </Layout>
   );
 }
