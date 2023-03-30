@@ -5,6 +5,7 @@ const RDM = require('react-dom/server');
 const CandidateCard = require('../components/CandidateCard');
 const modalForm = require('../components/Mandalka');
 const { Candidate, History } = require('../db/models');
+const historyComp = require('../components/History');
 
 router.get('/:id', async (req, res) => {
   try {
@@ -41,8 +42,13 @@ router
   .post(async ({ body: { comment, stage }, params: { id } }, res) => {
     const history = await History.findOne({ where: { id } });
     history[`${stage}`] = `${new Date()}`;
-    console.log(history[`${stage}`]);
     history.save();
+    const view = React.createElement(historyComp, {
+      history,
+      candidate: { id },
+    });
+    const html = RDM.renderToStaticMarkup(view);
+    res.json({ html });
   });
 
 module.exports = router;

@@ -13,7 +13,6 @@ commentBtn?.addEventListener('click', (e) => {
         document.querySelector('#can-dialog').remove();
       });
       const modalCom = document.querySelector('#modalCom');
-      console.log(modalCom);
       modalCom?.addEventListener('submit', (ev) => {
         ev.preventDefault();
         const {
@@ -31,7 +30,12 @@ commentBtn?.addEventListener('click', (e) => {
             comment,
             stage,
           }),
-        }).then((res) => res.json());
+        })
+          .then((res) => res.json())
+          .then(({ html }) => {
+            document.querySelector('#modalForm').innerHTML = html;
+            document.querySelector('#can-dialog').remove();
+          });
       });
     })
     .catch(({ message }) => console.log(message));

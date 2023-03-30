@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function modalForHistory({ history }) {
+module.exports = function History({ history = {}, candidate = {} }) {
   return (
     <>
       <form id="modalForm" method="get" action={`/modal-form/${candidate.id}`}>
