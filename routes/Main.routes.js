@@ -3,6 +3,7 @@ const React = require('react');
 const RDM = require('react-dom/server');
 const Main = require('../components/Main');
 const NewCan = require('../components/Form');
+const { Candidate } = require('../db/models');
 
 router.get('/', (req, res) => {
   try {
@@ -11,10 +12,21 @@ router.get('/', (req, res) => {
     res.json(message);
   }
 });
-router.get('/modal-form', (req, res) => {
-  const view = React.createElement(NewCan);
-  const html = RDM.renderToStaticMarkup(view);
-  res.json({ html });
-});
+
+router
+  .route('/modal-form')
+  .get((req, res) => {
+    const view = React.createElement(NewCan);
+    const html = RDM.renderToStaticMarkup(view);
+    res.json({ html });
+  })
+  .post(async ({ body }, res) => {
+    try {
+      await Candidate.create({ body });
+      res.json({ message: 'OK' });
+    } catch ({ message }) {
+      console.log(message);
+    }
+  });
 
 module.exports = router;
