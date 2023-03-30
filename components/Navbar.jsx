@@ -24,6 +24,21 @@ function Navbar() {
               Home
             </a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link text-light" href="/auth/logout">
+              ВЫЙТИ
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link text-light" href="/auth/loga">
+              ЛОГА
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link text-light" href="/auth/rega">
+              РЕГА
+            </a>
+          </li>
         </ul>
       </div>
     </div>
