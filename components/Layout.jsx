@@ -13,8 +13,8 @@ module.exports = function Layout({ title, children, user }) {
           integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
           crossOrigin="anonymous"
         />
-        <script defer src="js/application.js" />
-        <script defer src="js/authScripts.js" />
+        <script defer src="/js/authScripts.js" />
+        <script defer src="/js/application.js" />
       </head>
 
       <body>
