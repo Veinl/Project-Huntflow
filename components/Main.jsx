@@ -17,7 +17,7 @@ function Candidates({ title, candidates = [], user }) {
       <button id="addCan" type="submit">
         Добавить нового кандидата
       </button>
-      </Layout>
+    </Layout>
   );
 }
 

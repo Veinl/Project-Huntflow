@@ -32,7 +32,11 @@ if (addBtn) {
             }),
           })
             .then((res) => res.json())
-            .then(({ message }) => console.log(message));
+            .then(({ html: html1 }) => {
+              document
+                .querySelector('.candidates')
+                .insertAdjacentHTML('beforeend', html1);
+            });
           document.getElementById('can-dialog').remove();
         });
         document.getElementById('closeBtn').addEventListener('click', () => {

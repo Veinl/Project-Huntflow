@@ -4,10 +4,12 @@ const RDM = require('react-dom/server');
 const Main = require('../components/Main');
 const NewCan = require('../components/Form');
 const { Candidate } = require('../db/models');
+const CandidateItem = require('../components/CandidatesItem');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    res.renderComponent(Main, { title: 'Main page' });
+    const candidates = await Candidate.findAll({ raw: true });
+    res.renderComponent(Main, { title: 'Main page', candidates });
   } catch ({ message }) {
     res.json(message);
   }
@@ -22,8 +24,7 @@ router
   })
   .post(async ({ body: { image, name, experience, number, email } }, res) => {
     try {
-      console.log(image, name, experience, number, email);
-      await Candidate.create({
+      const { dataValues: candidate } = await Candidate.create({
         image,
         name,
         experience,
@@ -32,7 +33,9 @@ router
         reject_status: false,
         handed: false,
       });
-      res.json({ message: 'OK' });
+      const view = React.createElement(CandidateItem, { candidate });
+      const html = RDM.renderToStaticMarkup(view);
+      res.json({ html });
     } catch ({ message }) {
       console.log(message);
     }
