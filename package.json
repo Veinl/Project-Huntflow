@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js --ext js, jsx, json --ignore ./sessions",
-    "dbr": "npx sequelize db:drop&&npx sequelize db:create%%npx sequelize db:migrate&&npx sequelize db:seed:all"
+    "dbr": "npx sequelize db:drop&&npx sequelize db:create&&npx sequelize db:migrate&&npx sequelize db:seed:all"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +26,6 @@
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
-    "@babel/register": "^7.21.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
