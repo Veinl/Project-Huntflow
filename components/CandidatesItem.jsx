@@ -1,13 +1,13 @@
-const React = require("react");
+const React = require('react');
 
 function CandidateItem() {
   return (
-    <div class="card" style="width: 18rem;">
-      <img src={candidate.img} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{candidate.name}</h5>
-        <p class="card-text">{candidate.email}</p>
-        <a href="#" class="btn btn-primary">
+    <div className="card" style="width: 18rem;">
+      <img src={candidate.img} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{candidate.name}</h5>
+        <p className="card-text">{candidate.email}</p>
+        <a href="#" className="btn btn-primary">
           Подробнее
         </a>
       </div>

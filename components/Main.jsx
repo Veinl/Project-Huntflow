@@ -1,7 +1,7 @@
-const React = require("react");
-const Layout = require("./Layout");
-const Categories = require("./Categories");
-const CandidateItem = require("./CandidatesItem");
+const React = require('react');
+const Layout = require('./Layout');
+const Categories = require('./Categories');
+const CandidateItem = require('./CandidatesItem');
 
 function Candidates({ title, candidates = [] }) {
   return (
@@ -13,7 +13,7 @@ function Candidates({ title, candidates = [] }) {
           <CandidateItem key={candidate.id} candidate={candidate} />
         ))}
       </ul>
-      <button>Добавить нового кандидата</button>
+      <button type="submit">Добавить нового кандидата</button>
     </Layout>
   );
 }

@@ -1,16 +1,15 @@
-const React = require("react");
-const Layout = require("./Layout");
+const React = require('react');
 
 function CandidateCard({ title }) {
   return (
-    <div class="card">
-      <img src={candidate.img} class="card-img-bottom" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{candidate.name}</h5>
-        <p class="card-text">{candidate.expirience}</p>
-        <p class="card-text">{candidate.email}</p>
-        <p class="card-text">{candidate.number}</p>
-        <button>Оставить комментарий</button>
+    <div className="card">
+      <img src={candidate.img} className="card-img-bottom" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{candidate.name}</h5>
+        <p className="card-text">{candidate.expirience}</p>
+        <p className="card-text">{candidate.email}</p>
+        <p className="card-text">{candidate.number}</p>
+        <button type="submit">Оставить комментарий</button>
       </div>
     </div>
   );
