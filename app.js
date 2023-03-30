@@ -6,7 +6,7 @@ const mainRoutes = require('./routes/Main.routes');
 const authRoutes = require('./routes/auth.route');
 const candidateRoute = require('./routes/infoCard.route');
 
-const PORT = 3000;
+const PORT = 4000;
 
 const app = express();
 
