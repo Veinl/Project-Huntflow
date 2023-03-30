@@ -2,7 +2,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Videocall extends Model {
-    static associate(Interviewer, Candidate) {
+    static associate({ Interviewer, Candidate }) {
       this.belongsTo(Candidate, { foreignKey: 'candidate_id' });
       this.belongsTo(Interviewer, { foreignKey: 'interviewer_id' });
     }
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Videocall',
-    },
+    }
   );
   return Videocall;
 };

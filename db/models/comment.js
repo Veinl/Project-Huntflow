@@ -2,7 +2,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {
-    static associate(Candidate) {
+    static associate({ Candidate }) {
       this.belongsTo(Candidate, { foreignKey: 'candidate_id' });
     }
   }
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Comment',
-    },
+    }
   );
   return Comment;
 };
