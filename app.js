@@ -9,7 +9,9 @@ const app = express();
 
 serverConfig(app);
 
-app.route("/").get((req, res) => {});
+app.route("/").get((req, res) => {
+  
+});
 
 app.listen(PORT, () => {
   console.log(`Подняли на ${PORT} порту`);

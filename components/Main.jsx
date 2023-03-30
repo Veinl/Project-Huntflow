@@ -9,9 +9,10 @@ function Candidates({ title, candidates = [] }) {
       <Categories className="Categories" />
       <h1>Candidates</h1>
       <ul className="candidates">
-        {candidates.map((candidate) => (
-          <CandidateItem key={candidate.id} candidate={candidate} />
-        ))}
+        {candidates &&
+          candidates.map((candidate) => (
+            <CandidateItem key={candidate.id} candidate={candidate} />
+          ))}
       </ul>
       <button type="submit">Добавить нового кандидата</button>
     </Layout>
