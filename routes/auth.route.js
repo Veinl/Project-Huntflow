@@ -28,6 +28,7 @@ router.post('/rega', async (req, res) => {
           const hash = await bcrypt.hash(password, 10);
 
           const newUser = await User.create({ name, email, password: hash });
+          console.log(newUser.id);
           req.session.userId = newUser.id;
 
           res.json({ message: 'ok' });

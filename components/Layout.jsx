@@ -14,6 +14,7 @@ module.exports = function Layout({ title, children }) {
           crossOrigin="anonymous"
         />
         <script defer src="js/application.js" />
+        <script defer src="js/authScripts.js" />
         <Navbar />
       </head>
       <body>{children}</body>
