@@ -8,7 +8,7 @@ function CandidateItem({ candidate }) {
         <h5 className="card-title">{candidate.name}</h5>
         <p className="card-text">{candidate.email}</p>
         <p className="card-text">{candidate.experience}</p>
-        <a href="#" className="btn btn-primary">
+        <a href={`/candidate/${candidate.id}`} className="btn btn-primary">
           Подробнее
         </a>
       </div>

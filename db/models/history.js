@@ -16,19 +16,19 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id',
         },
       },
-      invite_message_date: {
+      invite: {
         type: DataTypes.TEXT,
       },
-      screencall_pass_date: {
+      screencall: {
         type: DataTypes.TEXT,
       },
-      videocall_pass_date: {
+      videocall: {
         type: DataTypes.TEXT,
       },
       offer_date: {
         type: DataTypes.TEXT,
       },
-      offer_accept_date: {
+      offer_accepted: {
         type: DataTypes.TEXT,
       },
     },

@@ -16,19 +16,19 @@ module.exports = {
           key: 'id',
         },
       },
-      invite_message_date: {
+      invite: {
         type: Sequelize.TEXT,
       },
-      screencall_pass_date: {
+      screencall: {
         type: Sequelize.TEXT,
       },
-      videocall_pass_date: {
+      videocall: {
         type: Sequelize.TEXT,
       },
       offer_date: {
         type: Sequelize.TEXT,
       },
-      offer_accept_date: {
+      offer_accepted: {
         type: Sequelize.TEXT,
       },
       createdAt: {
