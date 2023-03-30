@@ -5,7 +5,7 @@ const serverConfig = require('./config/serverConfig');
 const mainRoutes = require('./routes/Main.routes');
 const authRoutes = require('./routes/auth.route');
 
-const PORT = 3000;
+const PORT = 4000;
 
 const app = express();
 

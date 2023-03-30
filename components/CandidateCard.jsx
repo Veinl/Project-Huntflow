@@ -9,6 +9,7 @@ function CandidateCard({ candidate }) {
         <p className="card-text">{candidate.experience}</p>
         <p className="card-text">{candidate.email}</p>
         <p className="card-text">{candidate.number}</p>
+        <History />
         <button type="submit">Оставить комментарий</button>
       </div>
     </div>

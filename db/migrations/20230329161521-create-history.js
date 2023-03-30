@@ -16,24 +16,19 @@ module.exports = {
           key: 'id',
         },
       },
-      invite_message_date: {
-        allowNull: false,
+      invite: {
         type: Sequelize.TEXT,
       },
-      screencall_pass_date: {
-        allowNull: false,
+      screencall: {
         type: Sequelize.TEXT,
       },
-      videocall_pass_date: {
-        allowNull: false,
+      videocall: {
         type: Sequelize.TEXT,
       },
       offer_date: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
-      offer_accept_date: {
-        allowNull: false,
+      offer_accepted: {
         type: Sequelize.TEXT,
       },
       createdAt: {
