@@ -4,7 +4,7 @@ function Navbar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid" style={{ color: 'black' }}>
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           HuntFlow
         </a>
         <button
@@ -24,7 +24,7 @@ function Navbar({ user }) {
               <a
                 className="navbar-brand nav-link active"
                 aria-current="page"
-                href="#"
+                href="/"
               >
                 Home
               </a>
