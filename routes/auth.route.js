@@ -31,7 +31,7 @@ router.post('/rega', async (req, res) => {
           console.log(newUser.id);
           req.session.userId = newUser.id;
 
-          res.json({ message: 'ok' });
+          res.redirect('/');
         } else {
           res.json({ message: 'Такой email уже существует' });
         }
