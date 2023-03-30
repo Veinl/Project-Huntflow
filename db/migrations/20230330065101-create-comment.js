@@ -1,31 +1,23 @@
+"use strict";
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Interviewers', {
+    await queryInterface.createTable("Comments", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      email: {
+      candidate_id: {
         allowNull: false,
-        type: Sequelize.TEXT,
-        unique: true,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Candidates",
+          key: "id",
+        },
       },
-      name: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
-      number: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
-      zoom: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
-      skype: {
+      text: {
         allowNull: false,
         type: Sequelize.TEXT,
       },
@@ -40,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('Interviewers');
+    await queryInterface.dropTable("Comments");
   },
 };

@@ -1,13 +1,13 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Interview extends Model {
+  class Screencall extends Model {
     static associate({ Candidate, Interviewer }) {
       this.belongsTo(Candidate, { foreignKey: 'candidate_id' });
       this.belongsTo(Interviewer, { foreignKey: 'interviewer_id' });
     }
   }
-  Interview.init(
+  Screencall.init(
     {
       interviewer_id: {
         allowNull: false,
@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: 'Interview',
+      modelName: 'Screencall',
     },
   );
-  return Interview;
+  return Screencall;
 };

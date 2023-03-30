@@ -1,9 +1,11 @@
-"use strict";
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Interviewer extends Model {
-    static associate({ Interview }) {
-      this.hasMany(Interview, { foreignKey: "interviewer_id" });
+    static associate({ Interview, Screencall, Videocall }) {
+      this.hasMany(Interview, { foreignKey: 'interviewer_id' });
+      this.hasMany(Screencall, { foreignKey: 'interviewer_id' });
+      this.hasMany(Videocall, { foreignKey: 'interviewer_id' });
     }
   }
   Interviewer.init(
@@ -32,8 +34,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Interviewer",
-    }
+      modelName: 'Interviewer',
+    },
   );
   return Interviewer;
 };

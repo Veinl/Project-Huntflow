@@ -1,22 +1,13 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Interview extends Model {
-    static associate({ Candidate, Interviewer }) {
+  class Comment extends Model {
+    static associate(Candidate) {
       this.belongsTo(Candidate, { foreignKey: 'candidate_id' });
-      this.belongsTo(Interviewer, { foreignKey: 'interviewer_id' });
     }
   }
-  Interview.init(
+  Comment.init(
     {
-      interviewer_id: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'Interviewers',
-          key: 'id',
-        },
-      },
       candidate_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
@@ -25,15 +16,15 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id',
         },
       },
-      date: {
+      text: {
         allowNull: false,
         type: DataTypes.TEXT,
       },
     },
     {
       sequelize,
-      modelName: 'Interview',
+      modelName: 'Comment',
     },
   );
-  return Interview;
+  return Comment;
 };
