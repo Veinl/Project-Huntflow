@@ -1,8 +1,6 @@
 const formReg = document.querySelector('#formReg');
 const formLogin = document.querySelector('#formLogin');
 
-console.log(formReg, formLogin);
-
 if (formReg) {
   formReg.addEventListener('submit', async (e) => {
     e.preventDefault();

@@ -38,8 +38,11 @@ router
     const html = RDM.renderToStaticMarkup(view);
     res.json({ html });
   })
-  .post(async (req, res) => {
-    const a = '';
+  .post(async ({ body: { comment, stage }, params: { id } }, res) => {
+    const history = await History.findOne({ where: { id } });
+    history[`${stage}`] = `${new Date()}`;
+    console.log(history[`${stage}`]);
+    history.save();
   });
 
 module.exports = router;

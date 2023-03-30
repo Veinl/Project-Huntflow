@@ -1,5 +1,6 @@
 const React = require('react');
 const Layout = require('./Layout');
+const History = require('./History');
 
 function CandidateCard({ candidate, history = {} }) {
   return (
