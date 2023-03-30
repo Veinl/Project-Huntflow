@@ -3,7 +3,7 @@ const React = require('react');
 const RDM = require('react-dom/server');
 const Main = require('../components/Main');
 const NewCan = require('../components/Form');
-const { Candidate } = require('../db/models');
+const { Candidate, History } = require('../db/models');
 const CandidateItem = require('../components/CandidatesItem');
 
 router.get('/', async (req, res) => {
@@ -33,6 +33,7 @@ router
         reject_status: false,
         handed: false,
       });
+      await History.create({ candidate_id: candidate.id });
       const view = React.createElement(CandidateItem, { candidate });
       const html = RDM.renderToStaticMarkup(view);
       res.json({ html });
@@ -40,5 +41,18 @@ router
       console.log(message);
     }
   });
+
+// const { dataValues: test } = await History.findOne({ where: { id: 1 } });
+// console.log(test);
+// let result = '';
+
+// for (const key in test) {
+//   if (test[key] === null) {
+//     result = key;modalForm
+//     break;
+//   }
+// }
+
+// console.log(result);
 
 module.exports = router;

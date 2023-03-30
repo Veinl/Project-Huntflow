@@ -1,6 +1,8 @@
 const formReg = document.querySelector('#formReg');
 const formLogin = document.querySelector('#formLogin');
 
+console.log(formReg, formLogin);
+
 if (formReg) {
   formReg.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -18,7 +20,6 @@ if (formReg) {
       }),
     });
     const data = await res.json();
-    console.log(data);
     if (data.message === 'ok') {
       window.location.assign('/');
     } else {

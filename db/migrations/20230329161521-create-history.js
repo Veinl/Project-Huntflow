@@ -17,23 +17,18 @@ module.exports = {
         },
       },
       invite_message_date: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
       screencall_pass_date: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
       videocall_pass_date: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
       offer_date: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
       offer_accept_date: {
-        allowNull: false,
         type: Sequelize.TEXT,
       },
       createdAt: {
