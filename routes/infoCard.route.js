@@ -43,7 +43,17 @@ router
   })
   .post(async ({ body: { comment, stage }, params: { id } }, res) => {
     const history = await History.findOne({ where: { id } });
-    const addCom = await Comment.create({ candidate_id: id, text: comment });
+    await Comment.create({ candidate_id: id, text: comment });
+    const candidate = await Candidate.findOne({ where: { id } });
+    candidate.invite = false;
+    candidate.screencall = false;
+    candidate.videocall = false;
+    candidate.interview = false;
+    candidate.offer_date = false;
+    candidate.offer_accepted = false;
+    candidate.reject_status = false;
+    candidate[`${stage}`] = true;
+    candidate.save();
     history[`${stage}`] = `${new Date()}`;
     history.save();
     const view = React.createElement(historyComp, {
