@@ -2,9 +2,7 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Candidate extends Model {
-    static associate({
-      Interview, History, Screencall, Videocall, Comment,
-    }) {
+    static associate({ Interview, History, Screencall, Videocall, Comment }) {
       this.hasMany(Interview, { foreignKey: 'candidate_id' });
       this.hasMany(History, { foreignKey: 'candidate_id' });
       this.hasMany(Screencall, { foreignKey: 'candidate_id' });
@@ -35,19 +33,41 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         unique: true,
       },
-      reject_status: {
+      invite: {
         allowNull: false,
+        defaultValue: false,
         type: DataTypes.BOOLEAN,
       },
-      handed: {
+      screencall: {
         allowNull: false,
+        defaultValue: false,
+        type: DataTypes.BOOLEAN,
+      },
+      videocall: {
+        allowNull: false,
+        defaultValue: false,
+        type: DataTypes.BOOLEAN,
+      },
+      offer_date: {
+        allowNull: false,
+        defaultValue: false,
+        type: DataTypes.BOOLEAN,
+      },
+      offer_accepted: {
+        allowNull: false,
+        defaultValue: false,
+        type: DataTypes.BOOLEAN,
+      },
+      reject_status: {
+        allowNull: false,
+        defaultValue: false,
         type: DataTypes.BOOLEAN,
       },
     },
     {
       sequelize,
       modelName: 'Candidate',
-    },
+    }
   );
   return Candidate;
 };

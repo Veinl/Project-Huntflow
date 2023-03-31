@@ -25,6 +25,9 @@ module.exports = {
       videocall: {
         type: Sequelize.TEXT,
       },
+      interview: {
+        type: Sequelize.TEXT,
+      },
       offer_date: {
         type: Sequelize.TEXT,
       },

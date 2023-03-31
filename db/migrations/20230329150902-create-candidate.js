@@ -29,14 +29,37 @@ module.exports = {
         type: Sequelize.TEXT,
         unique: true,
       },
+      invite: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN,
+      },
+      screencall: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN,
+      },
+      videocall: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN,
+      },
+      offer_date: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN,
+      },
+      offer_accepted: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN,
+      },
       reject_status: {
         allowNull: false,
+        defaultValue: false,
         type: Sequelize.BOOLEAN,
       },
-      handed: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN,
-      },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
