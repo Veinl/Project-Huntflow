@@ -1,10 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
 const History = require('./History');
+const Comment = require('./Comments');
 
 function CandidateCard({ candidate, history }) {
   return (
-    <Layout>
+    <Layout title={title} user={user}>
       <div class="container">
         <div class="wrapper" >
           <img
@@ -22,6 +23,7 @@ function CandidateCard({ candidate, history }) {
           <p className="card-text">Years' experience: {candidate.experience}</p>
           <p className="card-text">Email: {candidate.email}</p>
           <p className="card-text">Number: {candidate.number}</p>
+          <Comment comment={comment} />
           </div>
           <div class="history">
           <History candidate={candidate} history={history} />
