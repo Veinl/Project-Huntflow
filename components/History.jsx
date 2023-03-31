@@ -3,7 +3,7 @@ const React = require('react');
 module.exports = function History({ history = {}, candidate = {} }) {
   return (
     <form id="modalForm" method="get" action={`/modal-form/${candidate.id}`}>
-      <h1 className="card-title">History:</h1>
+      <h2 className="card-title">History:</h2>
       <p className="card-text">
         Invite status: {(history.invite && `✅ ${history.invite}`) || '❌'}
       </p>

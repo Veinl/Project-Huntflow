@@ -72,7 +72,7 @@ h1 {
 dialog {
   top: 100px;
   z-index: 99999;
-  width: 300px;
+  width: 220px;
   border-radius: 25px;
 }
 #closeBtn {

@@ -6,7 +6,7 @@ function CandidateCard({ candidate, history }) {
   return (
     <Layout>
       <div className="container">
-        <img src={candidate.image} className="card-img-bottom" alt="..." style={{height:700, width:700}}/>
+        <img src={candidate.image} className="card-img-bottom" alt="..." style={{height:500, width:500}}/>
         <div className="card-body">
           <h5 className="card-title">Name: {candidate.name}</h5>
           <p className="card-text">Years' experience: {candidate.experience}</p>
