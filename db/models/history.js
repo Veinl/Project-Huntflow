@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       videocall: {
         type: DataTypes.TEXT,
       },
+      interview: {
+        type: DataTypes.TEXT,
+      },
       offer_date: {
         type: DataTypes.TEXT,
       },

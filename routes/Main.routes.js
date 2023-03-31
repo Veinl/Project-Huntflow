@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router
   .route('/modal-form')
   .get((req, res) => {
@@ -41,18 +42,5 @@ router
       console.log(message);
     }
   });
-
-// const { dataValues: test } = await History.findOne({ where: { id: 1 } });
-// console.log(test);
-// let result = '';
-
-// for (const key in test) {
-//   if (test[key] === null) {
-//     result = key;modalForm
-//     break;
-//   }
-// }
-
-// console.log(result);
 
 module.exports = router;

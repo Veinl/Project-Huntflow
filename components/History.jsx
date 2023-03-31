@@ -16,6 +16,10 @@ module.exports = function History({ history = {}, candidate = {} }) {
         {(history.videocall && `✅ ${history.videocall}`) || '❌'}
       </p>
       <p className="card-text">
+        Interview status:{' '}
+        {(history.interview && `✅ ${history.interview}`) || '❌'}
+      </p>
+      <p className="card-text">
         Offer status:{' '}
         {(history.offer_date && `✅ ${history.offer_date}`) || '❌'}
       </p>
