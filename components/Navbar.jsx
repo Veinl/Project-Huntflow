@@ -23,14 +23,17 @@ function Navbar({ user }) {
                 aria-current="page"
                 href="/"
               >
-                        <img src="https://huntflow.ru/static/promo-static/landing-2021/src/images/pages/brand/logos/main.svg" style={{width:150}}></img>
-
+                <img
+                  src="https://huntflow.ru/static/promo-static/landing-2021/src/images/pages/brand/logos/main.svg"
+                  style={{ width: 150 }}
+                ></img>
               </a>
             </li>
 
             {user ? (
               <>
                 {' '}
+                <li className="nav-item navbar-brand">Hello, {user.name}!</li>
                 <li className="nav-item navbar-brand">
                   <a
                     className="navbar-brand nav-link active"
