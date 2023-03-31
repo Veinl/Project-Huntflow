@@ -33,7 +33,7 @@ function Navbar({ user }) {
             {user ? (
               <>
                 {' '}
-                <li className="nav-item navbar-brand">Hello, {user.name}!</li>
+                <li style={{color: 'blue'}} className="nav-item navbar-brand">Hello, {user.name}!</li>
                 <li className="nav-item navbar-brand">
                   <a
                     className="navbar-brand nav-link active"

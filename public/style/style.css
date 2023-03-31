@@ -136,5 +136,8 @@ p {
   position: relative;
   width: 250px;
   left: 75%;
-  bottom: 170px;
+  bottom: 594px;
+}
+span {
+  color: green;
 }
