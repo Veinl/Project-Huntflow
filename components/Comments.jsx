@@ -3,7 +3,7 @@ const Layout = require('./Layout');
 
 function Comments({ comments = [] }) {
   return (
-    <div
+    <div id='com'
       className="card-body"
       style={{
         borderRadius: '30px',
