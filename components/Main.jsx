@@ -14,9 +14,6 @@ function Candidates({ title, candidates = [], user }) {
             <CandidateItem key={candidate.id} candidate={candidate} />
           ))}
       </ul>
-      <button id="addCan" type="submit">
-        Добавить нового кандидата
-      </button>
     </Layout>
   );
 }

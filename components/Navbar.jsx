@@ -4,9 +4,6 @@ function Navbar({ user }) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid" style={{ color: 'black' }}>
-        <a className="navbar-brand" href="/">
-          HuntFlow
-        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,7 +23,8 @@ function Navbar({ user }) {
                 aria-current="page"
                 href="/"
               >
-                Home
+                        <img src="https://huntflow.ru/static/promo-static/landing-2021/src/images/pages/brand/logos/main.svg" style={{width:150}}></img>
+
               </a>
             </li>
 
@@ -58,6 +56,9 @@ function Navbar({ user }) {
             )}
           </ul>
         </div>
+        <button id="addCan" type="submit">
+          Добавить нового кандидата
+        </button>
       </div>
     </nav>
   );
