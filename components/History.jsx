@@ -5,26 +5,26 @@ module.exports = function History({ history = {}, candidate = {} }) {
     <form id="modalForm" method="get" action={`/modal-form/${candidate.id}`}>
       <h2 className="card-title">History:</h2>
       <p className="card-text">
-        Invite status: {(history.invite && `✅ ${history.invite}`) || '❌'}
+      <span> Invite status:</span> {(history.invite && `✅ ${history.invite}`) || '❌'}
       </p>
       <p className="card-text">
-        Screencall status:{' '}
+       <span> Screencall status:{' '}</span>
         {(history.screencall && `✅ ${history.screencall}`) || '❌'}
       </p>
       <p className="card-text">
-        Videocall status:{' '}
+      <span> Videocall status:{' '}</span>
         {(history.videocall && `✅ ${history.videocall}`) || '❌'}
       </p>
       <p className="card-text">
-        Interview status:{' '}
+      <span> Interview status:{' '}</span>
         {(history.interview && `✅ ${history.interview}`) || '❌'}
       </p>
       <p className="card-text">
-        Offer status:{' '}
+      <span>Offer status:{' '}</span>
         {(history.offer_date && `✅ ${history.offer_date}`) || '❌'}
       </p>
       <p className="card-text">
-        Offer assign date:{' '}
+      <span>Offer assign date:{' '}</span>
         {(history.offer_accepted && `✅ ${history.offer_accepted}`) || '❌'}
       </p>
     </form>

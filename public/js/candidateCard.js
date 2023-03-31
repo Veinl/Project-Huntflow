@@ -32,8 +32,9 @@ commentBtn?.addEventListener('click', (e) => {
           }),
         })
           .then((res) => res.json())
-          .then(({ html }) => {
+          .then(({ html, comhtml }) => {
             document.querySelector('#modalForm').innerHTML = html;
+            document.querySelector('#com').outerHTML = String(comhtml);
             document.querySelector('#can-dialog').remove();
           });
       });

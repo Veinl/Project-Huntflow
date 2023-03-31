@@ -25,6 +25,9 @@ function CandidateCard({ title, candidate, history, user, comments = [] }) {
             </p>
             <p className="card-text">Email: {candidate.email}</p>
             <p className="card-text">Number: {candidate.number}</p>
+          </div>
+          <div>
+            {' '}
             <Comment comments={comments} />
           </div>
           <div class="history">

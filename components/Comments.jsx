@@ -3,12 +3,15 @@ const Layout = require('./Layout');
 
 function Comments({ comments = [] }) {
   return (
-    <div
+    <div id='com'
       className="card-body"
       style={{
-        borderRadius: '10px',
+        borderRadius: '30px',
         backgroundColor: 'orange',
-        width: '80px',
+        width: '300px',
+        height: '400px',
+        marginLeft: '450px',
+        paddingTop: '10px',
       }}
     >
       {comments &&
@@ -17,7 +20,10 @@ function Comments({ comments = [] }) {
             style={{
               borderRadius: '10px',
               backgroundColor: 'yellow',
-              width: '50px',
+              width: '200px',
+              marginTop: '5px',
+              marginLeft: '47px',
+              height: '30px',
             }}
           >
             <p className="card-text">{comment.text}</p>
