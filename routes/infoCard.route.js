@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const React = require('react');
 const RDM = require('react-dom/server');
-
+// const Comment }=  require('../db/comment')
 const CandidateCard = require('../components/CandidateCard');
 const modalForm = require('../components/Mandalka');
 const { Candidate, History, Comment } = require('../db/models');
 const historyComp = require('../components/History');
+const CommentComp = require('../components/Comments');
 
 router.get('/:id', async (req, res) => {
   try {
@@ -43,7 +44,10 @@ router
   })
   .post(async ({ body: { comment, stage }, params: { id } }, res) => {
     const history = await History.findOne({ where: { id } });
-    const addCom = await Comment.create({ candidate_id: id, text: comment });
+    await Comment.create({ candidate_id: id, text: comment });
+    const allComm = await Comment.findAll();
+    const comView = React.createElement(CommentComp, { comments: allComm })
+    const comhtml = RDM.renderToStaticMarkup(comView)
     history[`${stage}`] = `${new Date()}`;
     history.save();
     const view = React.createElement(historyComp, {
@@ -51,7 +55,7 @@ router
       candidate: { id },
     });
     const html = RDM.renderToStaticMarkup(view);
-    res.json({ html });
+    res.json({ html, comhtml });
   });
 
 module.exports = router;
