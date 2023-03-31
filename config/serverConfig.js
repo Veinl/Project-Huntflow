@@ -8,6 +8,7 @@ const session = require('express-session');
 const ssr = require('../middleware/ssr');
 
 const sessionConfig = require("./sessionConfig");
+const { getUser } = require('../middleware/auth');
 
 const serverConfig = (app) => {
   app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -17,6 +18,7 @@ const serverConfig = (app) => {
   app.use(ssr);
   app.use(cookieParser());
   app.use(session(sessionConfig));
+  app.use(getUser);
 };
 
 module.exports = serverConfig;
