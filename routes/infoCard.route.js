@@ -45,6 +45,16 @@ router
   .post(async ({ body: { comment, stage }, params: { id } }, res) => {
     const history = await History.findOne({ where: { id } });
     await Comment.create({ candidate_id: id, text: comment });
+    const candidate = await Candidate.findOne({ where: { id } });
+    candidate.invite = false;
+    candidate.screencall = false;
+    candidate.videocall = false;
+    candidate.interview = false;
+    candidate.offer_date = false;
+    candidate.offer_accepted = false;
+    candidate.reject_status = false;
+    candidate[`${stage}`] = true;
+    candidate.save();
     const allComm = await Comment.findAll();
     const comView = React.createElement(CommentComp, { comments: allComm })
     const comhtml = RDM.renderToStaticMarkup(comView)

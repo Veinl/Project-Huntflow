@@ -44,6 +44,12 @@ module.exports = {
         defaultValue: false,
         type: Sequelize.BOOLEAN,
       },
+      interview: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN,
+      },
+
       offer_date: {
         allowNull: false,
         defaultValue: false,
