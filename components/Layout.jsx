@@ -15,6 +15,7 @@ module.exports = function Layout({ title, children, user }) {
         />
         <script defer src="/js/authScripts.js" />
         <script defer src="/js/application.js" />
+        <script defer src="/js/candidateCard.js" />
       </head>
 
       <body>

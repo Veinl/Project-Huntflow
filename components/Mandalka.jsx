@@ -1,18 +1,21 @@
 const React = require('react');
 
-module.exports = function History({ history }) {
+module.exports = function modalForHistory({ firstEmpty, id }) {
   return (
     <dialog id="can-dialog" open>
-      <form id="modalForm" method="post" action="/modal-form">
-        <label for="lfname">{history.invite}</label>
+      <form id="modalCom" method="post" action={`/candidate/modal-form/${id}`}>
+        <label id="stage" for="comment">
+          {firstEmpty}{' '}
+        </label>
         <input
-          id="lfname"
-          name="fname"
+          id="comment"
+          name="comment"
           type="text"
           placeholder="Начни вводить"
         />
-        <input type="submit" value="Add new!" className="button" />
-        <button type="submit">Оставить комментарий</button>
+        <button id="sendCom" type="submit">
+          Оставить комментарий
+        </button>
         <button id="closeBtn">Close</button>
       </form>
     </dialog>
