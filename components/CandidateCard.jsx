@@ -3,7 +3,7 @@ const Layout = require('./Layout');
 const History = require('./History');
 const Comment = require('./Comments');
 
-function CandidateCard({ title, candidate, history, user }) {
+function CandidateCard({ title, candidate, history, user, comments = [] }) {
   return (
     <Layout title={title} user={user}>
       <div class="container">
@@ -25,7 +25,7 @@ function CandidateCard({ title, candidate, history, user }) {
             </p>
             <p className="card-text">Email: {candidate.email}</p>
             <p className="card-text">Number: {candidate.number}</p>
-            {/* <Comment comment={comment} /> */}
+            <Comment comments={comments} />
           </div>
           <div class="history">
             <History candidate={candidate} history={history} />
