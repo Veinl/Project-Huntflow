@@ -15,7 +15,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
 router
   .route('/modal-form')
   .get((req, res) => {

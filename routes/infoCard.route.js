@@ -4,13 +4,14 @@ const RDM = require('react-dom/server');
 
 const CandidateCard = require('../components/CandidateCard');
 const modalForm = require('../components/Mandalka');
-const { Candidate, History } = require('../db/models');
+const { Candidate, History, Comment } = require('../db/models');
 const historyComp = require('../components/History');
 
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const candidate = await Candidate.findOne({ where: { id }, raw: true });
+    const comments = await Comment.findAll({ where: { candidate_id: id } });
     const { dataValues: history } = await History.findOne({
       where: { candidate_id: id },
     });
@@ -18,6 +19,7 @@ router.get('/:id', async (req, res) => {
       title: 'Candidate page',
       candidate,
       history,
+      comments,
     });
   } catch ({ message }) {
     res.json(message);
@@ -41,6 +43,7 @@ router
   })
   .post(async ({ body: { comment, stage }, params: { id } }, res) => {
     const history = await History.findOne({ where: { id } });
+    const addCom = await Comment.create({ candidate_id: id, text: comment });
     history[`${stage}`] = `${new Date()}`;
     history.save();
     const view = React.createElement(historyComp, {

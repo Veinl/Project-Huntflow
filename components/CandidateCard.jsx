@@ -3,11 +3,11 @@ const Layout = require('./Layout');
 const History = require('./History');
 const Comment = require('./Comments');
 
-function CandidateCard({ candidate, history }) {
+function CandidateCard({ title, candidate, history, user, comments = [] }) {
   return (
     <Layout title={title} user={user}>
       <div class="container">
-        <div class="wrapper" >
+        <div class="wrapper">
           <img
             src={candidate.image}
             class="banner-image"
@@ -19,21 +19,23 @@ function CandidateCard({ candidate, history }) {
           <br />
           <br />
           <br />
-          <div class = "discription">
-          <p className="card-text">Years' experience: {candidate.experience}</p>
-          <p className="card-text">Email: {candidate.email}</p>
-          <p className="card-text">Number: {candidate.number}</p>
-          <Comment comment={comment} />
+          <div class="discription">
+            <p className="card-text">
+              Years' experience: {candidate.experience}
+            </p>
+            <p className="card-text">Email: {candidate.email}</p>
+            <p className="card-text">Number: {candidate.number}</p>
+            <Comment comments={comments} />
           </div>
           <div class="history">
-          <History candidate={candidate} history={history} />
-          <button
-            formAction={`/candidate/modal-form/${candidate.id}`}
-            id="comment"
-            type="submit"
-          >
-            Оставить комментарий
-          </button>
+            <History candidate={candidate} history={history} />
+            <button
+              formAction={`/candidate/modal-form/${candidate.id}`}
+              id="comment"
+              type="submit"
+            >
+              Оставить комментарий
+            </button>
           </div>
         </div>
       </div>
