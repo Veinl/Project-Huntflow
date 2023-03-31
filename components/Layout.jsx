@@ -6,7 +6,7 @@ module.exports = function Layout({ title, children, user }) {
     <html lang="en">
       <head>
         <title>{title}</title>
-        {/* <link rel="stylesheet" href="/styles/style.css" /> */}
+        <link rel="stylesheet" href="/style/style.css" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
           rel="stylesheet"
